@@ -17,23 +17,10 @@ h1 {
   letter-spacing: 1px;
 }
 
-
 .cursor {
   display: inline-block;
   width: 10px;
   animation: blink 1s infinite;
-}
-
-.signature {
-  position: fixed;
-  bottom: 12px;
-  left: 16px;
-  right: auto;
-  font-size: 1rem;
-  opacity: 0.35;
-  letter-spacing: 0.5px;
-  pointer-events: none;
-  user-select: none;
 }
 
 @keyframes blink {
@@ -47,10 +34,20 @@ p {
   opacity: 0.7;
 }
 
+/* Assinatura */
+.signature {
+  position: fixed;
+  bottom: 12px;
+  left: 16px;
+  font-size: 1rem;
+  opacity: 0.35;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+  user-select: none;
+}
 
+/* Botão */
 #linkgdrive {
-  -webkit-tap-highlight-color: transparent;
-  outline: none;
   margin-top: 25px;
   text-decoration: none;
   color: #00ffcc;
@@ -58,22 +55,32 @@ p {
   border: 1px solid #00ffcc;
   padding: 12px 24px;
   border-radius: 6px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
 }
 
+/* Mobile – toque */
 #linkgdrive:active {
   background-color: #00ffcc;
   color: #0d0d0d;
 }
 
-#linkgdrive:focus {
-  background-color: transparent;
-  color: #00ffcc;
+/* Desktop – hover REAL (mouse/trackpad) */
+@media (hover: hover) and (pointer: fine) {
+  #linkgdrive:hover {
+    background-color: #00ffcc;
+    color: #0d0d0d;
+  }
 }
 
+/* Acessibilidade – teclado */
+#linkgdrive:focus-visible {
+  background-color: #00ffcc;
+  color: #0d0d0d;
+}
 
-
-
+/* Responsivo */
 @media (max-width: 480px) {
   h1 {
     font-size: 1.8rem;
@@ -84,21 +91,13 @@ p {
   }
 
   .signature {
-    font-size: 1rem;
+    font-size: 0.6rem;
     bottom: 10px;
-    right: 12px;
+    left: 12px;
   }
-
 
   #linkgdrive {
     font-size: 0.9rem;
     padding: 14px 28px;
   }
-
-
-
-
 }
-
-
-
