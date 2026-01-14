@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #0d0d0d;
+  color: #eaeaea;
+  font-family: "Courier New", monospace;
+  padding: 1rem;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  letter-spacing: 1px;
+}
+
+/* Cursor piscando */
+.cursor {
+  display: inline-block;
+  width: 10px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+p {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+/* Link */
+#linkgdrive {
+  margin-top: 25px;
+  text-decoration: none;
+  color: #00ffcc;
+  font-size: 0.95rem;
+  border: 1px solid #00ffcc;
+  padding: 12px 24px;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover só faz diferença no desktop */
+#linkgdrive:hover {
+  background-color: #00ffcc;
+  color: #0d0d0d;
+}
+
+/* 📱 Ajustes específicos para mobile */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+
+  #linkgdrive {
+    font-size: 0.9rem;
+    padding: 14px 28px;
+  }
+}
