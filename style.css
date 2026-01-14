@@ -17,11 +17,23 @@ h1 {
   letter-spacing: 1px;
 }
 
-/* Cursor piscando */
+
 .cursor {
   display: inline-block;
   width: 10px;
   animation: blink 1s infinite;
+}
+
+.signature {
+  position: fixed;
+  bottom: 12px;
+  left: 16px;
+  right: auto;
+  font-size: 1rem;
+  opacity: 0.35;
+  letter-spacing: 0.5px;
+  pointer-events: none;
+  user-select: none;
 }
 
 @keyframes blink {
@@ -35,7 +47,7 @@ p {
   opacity: 0.7;
 }
 
-/* Link */
+
 #linkgdrive {
   margin-top: 25px;
   text-decoration: none;
@@ -47,13 +59,13 @@ p {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Hover só faz diferença no desktop */
+
 #linkgdrive:hover {
   background-color: #00ffcc;
   color: #0d0d0d;
 }
 
-/* 📱 Ajustes específicos para mobile */
+
 @media (max-width: 480px) {
   h1 {
     font-size: 1.8rem;
@@ -63,8 +75,19 @@ p {
     font-size: 0.85rem;
   }
 
+  .signature {
+    font-size: 0.6rem;
+    bottom: 10px;
+    right: 12px;
+  }
+
+
   #linkgdrive {
     font-size: 0.9rem;
     padding: 14px 28px;
   }
+
+
+
+
 }
