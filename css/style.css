@@ -49,6 +49,8 @@ p {
 
 
 #linkgdrive {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
   margin-top: 25px;
   text-decoration: none;
   color: #00ffcc;
@@ -59,6 +61,15 @@ p {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+#linkgdrive:active {
+  background-color: #00ffcc;
+  color: #0d0d0d;
+}
+
+#linkgdrive:focus {
+  background-color: transparent;
+  color: #00ffcc;
+}
 
 #linkgdrive:hover {
   background-color: #00ffcc;
@@ -91,4 +102,5 @@ p {
 
 
 }
+
 
