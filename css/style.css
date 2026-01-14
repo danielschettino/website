@@ -71,10 +71,7 @@ p {
   color: #00ffcc;
 }
 
-#linkgdrive:hover {
-  background-color: #00ffcc;
-  color: #0d0d0d;
-}
+
 
 
 @media (max-width: 480px) {
@@ -102,5 +99,6 @@ p {
 
 
 }
+
 
 
