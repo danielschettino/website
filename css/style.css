@@ -1,15 +1,40 @@
 body {
   margin: 0;
-  height: 100svh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  min-height: 100vh;
+  display: flex;       
+  flex-direction: column; 
   background-color: #0d0d0d;
   color: #eaeaea;
   font-family: "Courier New", monospace;
-  text-align: center;
-  overflow: hidden;
+ 
+}
+
+
+main {
+  flex: 1; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center;     
+  padding: 1rem;
+  width: 100%;             
+  box-sizing: border-box;  
+  position: relative; 
+  z-index: 3; 
+}
+
+
+footer {
+  width: 100%;
+  padding: 12px 16px; 
+  box-sizing: border-box;
+  text-align: left; 
+  font-size: 1rem;
+  opacity: 0.35;
+  letter-spacing: 0.5px;
+  user-select: none;
+  position: relative; 
+  z-index: 3;
 }
 
 
@@ -21,7 +46,9 @@ h1 {
 .cursor {
   display: inline-block;
   width: 10px;
-  animation: blink 1s infinite;
+  color: #00ffcc;
+  text-shadow: 0 0 5px #00ffcc;
+  animation: blink 1s step-end infinite;
 }
 
 @keyframes blink {
@@ -35,17 +62,7 @@ p {
   opacity: 0.7;
 }
 
-/* Assinatura */
-.signature {
-  position: fixed;
-  bottom: 12px;
-  left: 16px;
-  font-size: 1rem;
-  opacity: 0.35;
-  letter-spacing: 0.5px;
-  pointer-events: none;
-  user-select: none;
-}
+
 
 /* Botão */
 #linkgdrive {
@@ -67,21 +84,16 @@ p {
   color: #0d0d0d;
 }
 
-/* Desktop – hover REAL (mouse/trackpad) */
+
 @media (hover: hover) and (pointer: fine) {
   #linkgdrive:hover {
-    background-color: #00ffcc;
-    color: #0d0d0d;
+    background-color: rgba(0, 255, 204, 0.1);
+    box-shadow: 0 0 15px #00ffcc, inset 0 0 5px #00ffcc;
+    text-shadow: 0 0 8px #00ffcc;
+    transform: translateY(-1px);
   }
 }
 
-/* Acessibilidade – teclado */
-#linkgdrive:focus-visible {
-  background-color: #00ffcc;
-  color: #0d0d0d;
-}
-
-/* Responsivo */
 @media (max-width: 480px) {
   h1 {
     font-size: 1.8rem;
@@ -91,16 +103,46 @@ p {
     font-size: 0.85rem;
   }
 
-  .signature {
-    font-size: 1rem;
-    bottom: 10px;
-    left: 12px;
-  }
-
-  #linkgdrive {
-    font-size: 0.9rem;
-    padding: 14px 28px;
-  }
+/* Acessibilidade – teclado */
+#linkgdrive:focus-visible {
+  background-color: rgba(0, 255, 204, 0.1);
+  box-shadow: 0 0 15px #00ffcc;
 }
 
+ 
 
+  #linkgdrive {
+  margin-top: 25px;
+  text-decoration: none;
+  color: #00ffcc;
+  font-size: 0.95rem;
+  border: 1px solid #00ffcc;
+  padding: 12px 24px;
+  border-radius: 6px;
+  transition: all 0.2s ease-in-out; 
+  outline: none;
+  position: relative;
+  z-index: 3;
+}
+}
+
+body::before {
+  content: " ";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50% );
+  background-size: 100% 4px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#linkgdrive, h1, p {
+  position: relative;
+  z-index: 3;
+}
