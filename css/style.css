@@ -65,7 +65,7 @@ p {
 
 
 
-/* Botão */
+/* Botão
 #linkgdrive {
   margin-top: 25px;
   text-decoration: none;
@@ -78,6 +78,7 @@ p {
   -webkit-tap-highlight-color: transparent;
   outline: none;
 }
+*/
 
 /* Mobile – toque */
 #linkgdrive:active {
